@@ -1,3 +1,9 @@
+#include "Player.h"
+#include <iostream>
+#include <locale>
+#include <algorithm>
+
+using namespace std;
 Player::Player(){
     // input player name;
     string name;
@@ -6,8 +12,7 @@ Player::Player(){
     _playerName = name;
 }
 
-template <typename T>
-void Player::input(T &t){
+void Player::input(string &t){
     char c;
     cin.get(c);
     if(c != "\n"){

@@ -2,15 +2,13 @@
 #define PLAYER_H
 
 #include <string>
-#include <iostream>
-#include <locale>
-#include <algorithm>
+
 
 using namespace std;
 class Player{
     
 private:
-        std::string _playerName;
+        string _playerName;
 
 public:
         Player();
@@ -18,3 +16,5 @@ public:
         bool continueGame();
         void input();     
 }
+
+#endif
