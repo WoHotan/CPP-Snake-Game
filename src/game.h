@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "Player.h"
 #include <random>
 #include "SDL.h"
 #include "controller.h"
@@ -11,7 +12,7 @@ class Game {
  public:
   Game(std::size_t grid_width, std::size_t grid_height);
   void Run(Controller const &controller, Renderer &renderer,
-           std::size_t target_frame_duration);
+           std::size_t target_frame_duration, Player player);
   int GetScore() const;
   int GetSize() const;
 
