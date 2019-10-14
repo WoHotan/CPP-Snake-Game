@@ -12,7 +12,7 @@ private:
 
 public:
         Player();
-        string getName(){ return playerName; }
+        string getName(){ return _playerName; }
         bool continueGame();
         void upperCase(string &option);     
 };

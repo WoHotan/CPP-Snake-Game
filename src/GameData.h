@@ -14,10 +14,10 @@ private:
 public:
     GameData();
     void writeFile(string name, int score, int size);
-    void writeFile(string name, int score, int size, string rewrite);
+    //void writeFile(string name, int score, int size, string rewrite);
     void openFile();
-    void cloaseFile();
-    void sorteData();
+    void closeFile();
+    void sortData();
     void topScore3();
 };
 #endif

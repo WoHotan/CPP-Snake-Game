@@ -10,18 +10,18 @@ GameData::GameData(){
     if(file.tellg() == 0){
         file << "Player Score Size\n";
     }
-    cloaseFile();
+    closeFile();
 }
 
 void GameData::writeFile(string name, int sore, int size){
     //write player's name/sore/size
     openFile();
     file << name << " " << sore << " " << size << endl;
-    cloaseFile(); 
+    closeFile(); 
 
 }
 
-void GameData::sorteData(){
+void GameData::sortData(){
     // sort the data via sore
     vector<tuple<int, int, string>> data;
     openFile();
@@ -35,4 +35,13 @@ void GameData::sorteData(){
         
     }
     
+}
+
+void GameData::openFile(){
+    // open a file
+    file.open("game_data.h", fstream::in | fstream::out | fstream::app);
+}
+
+void GameData::closeFile(){
+    file.close();
 }

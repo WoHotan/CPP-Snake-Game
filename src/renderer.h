@@ -7,7 +7,8 @@
 #include "snake.h"
 #include "Player.h"
 
-using namespace std
+
+using namespace std;
 
 class Renderer {
  public:
