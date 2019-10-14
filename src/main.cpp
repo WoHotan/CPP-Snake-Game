@@ -27,9 +27,9 @@ int main() {
     int score = game.GetScore();
     int size = game.GetSize();
     // Print player game data
-    cout << "Game has terminated successfully!\n";
-    cout << "Score: " << game.GetScore() << "\n";
-    cout << "Size: " << game.GetSize() << "\n";
+    cout << "Game has terminated successfully!" << endl;
+    cout << "Score: " << game.GetScore() << endl;
+    cout << "Size: " << game.GetSize() << endl;
     // write player game data
     data.writeFile(name, score, size);
     // kill render

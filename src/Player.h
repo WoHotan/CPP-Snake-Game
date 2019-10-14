@@ -14,7 +14,7 @@ public:
         Player();
         string getName(){ return playerName; }
         bool continueGame();
-        void input();     
-}
+        void upperCase(string &option);     
+};
 
 #endif

@@ -3,31 +3,27 @@
 #include <locale>
 #include <algorithm>
 
-using namespace std;
 Player::Player(){
     // input player name;
     string name;
-    cout << "Player name: "; << endl;
-    input<string>(name);
+    cout << "Player name: " << endl;
+    cin >> name;
     _playerName = name;
 }
 
-void Player::input(string &t){
-    char c;
-    cin.get(c);
-    if(c != "\n"){
-        cin.putback(c);
-        cin >> t;
-        cin.get();
-    }
+void Player::upperCase(string  &t){
+    
 }
+
 bool Player::continueGame(){
+    // if play continue the game after gaime over or not
     while(true){
         string option;
-        cout << "Play again?(yes/no): "; << endl;
-        input<string>(option);
-        transform(option.begin(), option.end(), [](char& c) {tolower(c)});
-        if((option == "yes") || (option == "y")){
+        cout << "Play again?(yes/no): " << endl;
+        // get player input
+        cin >> option;
+        transform(option.begin(), option.end(), option.begin(), ::toupper);
+        if((option == "yes") || (option == "y") || (option == "\n")){
             return true;
         }
         else if ((option == "no") || (option == "n")){
