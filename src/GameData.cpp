@@ -57,7 +57,7 @@ void GameData::sortData(){
 
 void GameData::openFile(){
     // open a file
-    file.open("game_data.h", fstream::in | fstream::out | fstream::app);
+    file.open("game_data.txt", fstream::in | fstream::out | fstream::app);
 }
 
 void GameData::closeFile(){
@@ -74,7 +74,7 @@ void GameData::topScore3(){
     getline(file, line);
     //print top 3
     cout << "*****************************************" << endl;
-    cout << "Top 3 player: " << "scores: " << "size: " endl;
+    cout << "Top 3 player: " << "scores: " << "size: " << endl;
     while(getline(file, line) && (i < 5)){
         istringstream linestream(line);
         vector<string> lineData;
