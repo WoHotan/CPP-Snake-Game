@@ -91,13 +91,14 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
   SDL_RenderPresent(sdl_renderer);
 }
 
-int Renderer::RenderMenu(std::string str) {
+int Renderer::RenderMenu(string str, string score) {
   Uint32 time;
   int x, y;
-  const int NUMMENU = 2;
+  const int NUMMENU = 3;
   const char *labels[NUMMENU];
   labels[0] = str.c_str();
   labels[1] = "Quit";
+  labels[2] = "Highest Score: " + score;
   SDL_Surface *s_menus[NUMMENU];
   SDL_Texture *t_menus[NUMMENU];
   bool selected[NUMMENU] = {0, 0};
@@ -107,22 +108,29 @@ int Renderer::RenderMenu(std::string str) {
 
   s_menus[0] = TTF_RenderText_Solid(sdl_font, labels[0], White);
   s_menus[1] = TTF_RenderText_Solid(sdl_font, labels[1], White);
+  s_menus[2] = TTF_RenderText_Solid(sdl_font, labels[2], White);
 
   t_menus[0] = SDL_CreateTextureFromSurface(sdl_renderer, s_menus[0]);
   t_menus[1] = SDL_CreateTextureFromSurface(sdl_renderer, s_menus[1]);
+  t_menus[2] = SDL_CreateTextureFromSurface(sdl_renderer, s_menus[2]);
 
   SDL_Rect pos[NUMMENU];
   pos[0].x = screen->w/2 - s_menus[0]->w/2;
-  pos[0].y = screen->h/2 - s_menus[0]->h;
+  pos[0].y = screen->h/3 - s_menus[0]->h;
   pos[0].w = s_menus[0]->w;
   pos[0].h = s_menus[0]->h;
   pos[1].x = screen->w/2 - s_menus[0]->w/2;
-  pos[1].y = screen->h/2 + s_menus[0]->h;
+  pos[1].y = screen->h/3 + s_menus[0]->h;
   pos[1].w = s_menus[1]->w;
   pos[1].h = s_menus[1]->h;
+  pos[2].x = screen->w/2 - s_menus[0]->w/2;
+  pos[2].y = screen->h/3 + s_menus[0]->h + s_munus[1]->h;
+  pos[2].w = s_menus[2]->w;
+  pos[2].h = s_menus[2]->h;
 
+ 
   SDL_Event event;
-  while(1)
+  while(true)
   {
     time = SDL_GetTicks();
     while(SDL_PollEvent(&event))
