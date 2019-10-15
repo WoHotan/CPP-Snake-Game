@@ -6,23 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/workspace/CPP-Snake-Game/src/GameData.cpp
-GameData.h
-/home/workspace/CPP-Snake-Game/src/GameData.h
+/home/workspace/CPP-Snake-Game/src/Player.cpp
+Player.h
+/home/workspace/CPP-Snake-Game/src/Player.h
 iostream
 -
-sstream
--
-vector
+locale
 -
 algorithm
 -
 
-/home/workspace/CPP-Snake-Game/src/GameData.h
-fstream
--
+/home/workspace/CPP-Snake-Game/src/Player.h
 string
--
-tuple
 -
 

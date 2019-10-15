@@ -23,10 +23,10 @@ bool Player::continueGame(){
         // get player input
         cin >> option;
         transform(option.begin(), option.end(), option.begin(), ::toupper);
-        if((option == "yes") || (option == "y") || (option == "\n")){
+        if((option == "YES") || (option == "Y") || (option == "\n")){
             return true;
         }
-        else if ((option == "no") || (option == "n")){
+        else if ((option == "NO") || (option == "N")){
             return false;
         }
         else{

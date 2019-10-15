@@ -1,2 +1,9 @@
 Player Score Size
+ozma 10 11
+ozma 1 2
+uuu 0 1
+pp 0 1
+ozma 0 1
+ozma 0 1
+ozma 0 1
 hhhh 0 1
