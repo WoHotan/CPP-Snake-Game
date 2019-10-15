@@ -84,7 +84,7 @@ void GameData::topScore3(){
             lineData.push_back(info);
         }
         i++;
-        cout << i << "-" + lineData[0] + ": Score " + lineData[1] + "- Snake Size" + lineData[2] << endl;
+        cout << i << "-" + lineData[0] + ": Score " + lineData[1] + "- Snake Size " + lineData[2] << endl;
         
     } 
     cout << "*****************************************" << endl;
