@@ -75,7 +75,7 @@ void GameData::topScore3(){
     //print top 3
     cout << "*****************************************" << endl;
     cout << "Top 3 player: " << "scores: " << "size: " << endl;
-    while(getline(file, line) && (i < 5)){
+    while(getline(file, line) && (i < 3)){
         istringstream linestream(line);
         vector<string> lineData;
         string info;
@@ -88,4 +88,26 @@ void GameData::topScore3(){
         
     } 
     cout << "*****************************************" << endl;
+}
+
+string GameData::getHighestScore(){
+    string highestscore;
+    int i = 0;
+    string line;
+    sortData();
+    openFile();
+    getline(file, line);
+    while (getline(file, line) && (i < 1))
+    {
+        istringstream linestream(line);
+        vector<string> lineData;
+        string info;
+        
+        while(getline(linestream, info, ' ')){
+            lineData.push_back(info);
+            highestscore = lineData[1];
+        }
+        i++;
+    }
+    return highestscore; 
 }

@@ -29,10 +29,18 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
   while (running) {
     frame_start = SDL_GetTicks();
-    bool showmenu = false;
+    bool menu = false;
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running, snake);
+    controller.HandleInput(running, snake, menu);
+
+    if(menu){
+      menu = false;
+      i = renderer.RenderMenu("Continue");
+      if(i == 1){
+      running = false;
+      }
+    }
     Update();
     renderer.Render(snake, food);
 

@@ -19,5 +19,6 @@ public:
     void closeFile();
     void sortData();
     void topScore3();
+    string getHighestScore();
 };
 #endif
