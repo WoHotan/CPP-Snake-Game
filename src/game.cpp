@@ -1,6 +1,7 @@
 #include "game.h"
 #include <iostream>
 #include "SDL.h"
+#include "game_data.h"
 
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height),
@@ -19,8 +20,16 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   int frame_count = 0;
   bool running = true;
 
+  // display menu
+  string highest = GameData.getHighestScore();
+  int i = renderer.RenderMenu("Start Game", highest);
+  if(i == 1){
+    running = false;
+  }
+
   while (running) {
     frame_start = SDL_GetTicks();
+    bool showmenu = false;
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
